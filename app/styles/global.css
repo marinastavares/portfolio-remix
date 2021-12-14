@@ -3,13 +3,10 @@
  * quick baseline!
  */
 :root {
-  --color-foreground: hsl(0, 0%, 7%);
-  --color-background: hsl(0, 0%, 100%);
-  --color-links: hsl(213, 100%, 52%);
-  --color-links-hover: hsl(213, 100%, 43%);
-  --color-border: hsl(0, 0%, 82%);
-  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica, Roboto,
-    Arial, sans-serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+  --color-pink: #BB5353;
+  --color-beige: #F3EDDD;
+  font-family: 'Righteous';
+  font-size: 62.5%;
 }
 
 html {
@@ -35,8 +32,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--color-beige);
+  color: var(--color-pink);
+  font-size: 1.6rem;
 }
 
 body {
@@ -77,56 +75,23 @@ input:where([type="search"]) {
   color: var(--color-foreground);
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.container {
-  --gutter: 16px;
-  width: 1024px;
-  max-width: calc(100% - var(--gutter) * 2);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.remix-app {
+.header {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: calc(100vh - env(safe-area-inset-bottom));
-}
-
-.remix-app > * {
-  width: 100%;
-}
-
-.remix-app__header {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.remix-app__header-content {
-  display: flex;
+  flex-direction: row;
+  padding: 1.6rem;
   justify-content: space-between;
   align-items: center;
 }
 
-.remix-app__header-home-link {
-  width: 106px;
-  height: 30px;
-  color: var(--color-foreground);
-}
-
-.remix-app__header-nav ul {
+.header-nav ul {
   list-style: none;
   margin: 0;
   display: flex;
@@ -134,83 +99,190 @@ input:where([type="search"]) {
   gap: 1.5em;
 }
 
-.remix-app__header-nav li {
-  font-weight: bold;
+.header-link {
+  text-decoration: none;
+  color: var(--color-pink);
+  font-weight: normal;
 }
 
-.remix-app__main {
-  flex: 1 1 100%;
+.header-link:hover {
+  color: var(--color-pink);
 }
 
-.remix-app__footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-top: 1px solid var(--color-border);
-}
-
-.remix-app__footer-content {
+.footer {
+  margin-top: auto;
+  padding: 1.6rem;
+  background-color: var(--color-pink);
   display: flex;
-  justify-content: center;
+  gap: 1.6rem;
   align-items: center;
 }
 
-.remix__page {
-  --gap: 1rem;
-  --space: 2rem;
+.first-section {
+  padding: 2.4rem 5.6rem;
+  display: flex;
+}
+
+.title {
+  color: var(--color-beige);
+  font-size: 4.8rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-pink);
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+.third-section {
+  padding: 3.6rem;
+}
+
+.skills {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+}
+
+.location {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.pin-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.location-text {
+  font-size: 1.6rem;
+}
+
+.first-text {
+  margin-top: 6.4rem;
+}
+
+.photo {
+  height: 60%;
+  margin-left: 2.4rem;
+}
+
+.second-section {
+  background-color: var(--color-pink);
+  padding: 3.6rem 2.4rem;
+  display: flex;
+  gap: 3.2rem;
+}
+
+.about-me {
+  color: var(--color-pink);
+  font-size: 4.8rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-beige);
+  text-transform: uppercase;
+  margin-top: 3.6rem;
+}
+
+.about-me-text {
+  color: var(--color-beige);
+  font-size: 1.6rem;
+  margin-top: 0.8rem;
+}
+
+.skills-container {
+  margin-top: 4.8rem;
   display: grid;
-  grid-auto-rows: min-content;
-  gap: var(--gap);
-  padding-top: var(--space);
-  padding-bottom: var(--space);
+  grid-template-columns: repeat(5, auto);
+  row-gap: 3.2rem;
+  column-gap: 4.8rem;
 }
 
-@media print, screen and (min-width: 640px) {
-  .remix__page {
-    --gap: 2rem;
-    grid-auto-rows: unset;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .remix__page {
-    --gap: 4rem;
-  }
-}
-
-.remix__page > main > :first-child {
-  margin-top: 0;
-}
-
-.remix__page > main > :last-child {
-  margin-bottom: 0;
-}
-
-.remix__page > aside {
-  margin: 0;
-  padding: 1.5ch 2ch;
-  border: solid 1px var(--color-border);
-  border-radius: 0.5rem;
-}
-
-.remix__page > aside > :first-child {
-  margin-top: 0;
-}
-
-.remix__page > aside > :last-child {
-  margin-bottom: 0;
-}
-
-.remix__form {
+.skill {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.remix__form > * {
-  margin-top: 0;
-  margin-bottom: 0;
+.skill-icon {
+  height: 8.4rem;
+}
+
+.skill-label {
+  color: var(--color-beige);
+  font-size: 2.4rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-pink);
+}
+
+
+@media print, screen and (max-width: 800px) {
+  .photo {
+    display: none;
+  }
+
+  .second-photo {
+    display: none;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .skills {
+    font-size: 2.4rem;
+  }
+
+  .skill-icon {
+    height: 3.6rem;
+  }
+
+  .skill-label {
+    font-size: 1.6rem;
+    -webkit-text-stroke-color: transparent;
+    color: var(--color-pink);
+  }
+
+  .second-photo-mobile {
+    height: 6.4rem;
+  }
+
+  .about-me {
+    font-size: 3.6rem;
+  }
+
+  .second-header {
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+  }
+
+  .first-section {
+    padding-bottom: 0;
+    flex-direction: column;
+  }
+
+  .photo-mobile {
+    height: 8.4rem;
+    width: 8.4rem;
+    margin-top: auto;
+    align-self: flex-end;
+  }
+
+  .first-text {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .photo-mobile {
+    display: none;
+  }
+
+  .second-photo-mobile {
+    display: none;
+  }
 }

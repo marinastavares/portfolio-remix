@@ -1,44 +1,76 @@
+/* eslint-disable react/react-in-jsx-scope */
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useLoaderData, json, Link } from "remix";
 
+
+import Pin from '~/assets/pin.png'
+import First from '~/assets/first.png'
+import FirstMobile from '~/assets/first-mobile.png'
+import Second from '~/assets/second.png'
+import SecondMobile from '~/assets/second-mobile.png'
+import HTML from '~/assets/skills/html.png'
+import CSSPhoto from '~/assets/skills/css.png'
+import Javascript from '~/assets/skills/javascript.png'
+import Typescript from '~/assets/skills/typescript.png'
+import ReactPic from '~/assets/skills/react.png'
+import Next from '~/assets/skills/nextjs.png'
+import MaterialPic from '~/assets/skills/material-ui.png'
+import Redux from '~/assets/skills/redux.png'
+import Graphql from '~/assets/skills/graphql.png'
+import Apollo from "~/assets/skills/apollo.png"
+
+
 type IndexData = {
-  resources: Array<{ name: string; url: string }>;
-  demos: Array<{ name: string; to: string }>;
+  skills: Array<{ name: string; png: string }>;
 };
 
 // Loaders provide data to components and are only ever called on the server, so
 // you can connect to a database or run any server side code you want right next
 // to the component that renders it.
 // https://remix.run/api/conventions#loader
-export let loader: LoaderFunction = () => {
-  let data: IndexData = {
-    resources: [
+export const loader: LoaderFunction = () => {
+  const data: IndexData = {
+    skills: [
       {
-        name: "Remix Docs",
-        url: "https://remix.run/docs"
+        png: HTML,
+        name: "HTML"
       },
       {
-        name: "React Router Docs",
-        url: "https://reactrouter.com/docs"
+        png: CSSPhoto,
+        name: "CSS"
       },
       {
-        name: "Remix Discord",
-        url: "https://discord.gg/VBePs6d"
-      }
-    ],
-    demos: [
-      {
-        to: "demos/actions",
-        name: "Actions"
+        png: Javascript,
+        name: "Javascript"
       },
       {
-        to: "demos/about",
-        name: "Nested Routes, CSS loading/unloading"
+        png: Typescript,
+        name: "Typescript"
       },
       {
-        to: "demos/params",
-        name: "URL Params and Error Boundaries"
-      }
+        png: ReactPic,
+        name: "ReactJS"
+      },
+      {
+        png: Next,
+        name: "NextJS"
+      },
+      {
+        png: MaterialPic,
+        name: "Material UI"
+      },
+      {
+        png: Redux,
+        name: "Redux"
+      },
+      {
+        png: Graphql,
+        name: "GraphQL"
+      },
+      {
+        png: Apollo,
+        name: "Apollo"
+      },
     ]
   };
 
@@ -47,54 +79,56 @@ export let loader: LoaderFunction = () => {
 };
 
 // https://remix.run/api/conventions#meta
-export let meta: MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return {
-    title: "Remix Starter",
-    description: "Welcome to remix!"
+    title: "Marina's Profile",
+    description: "Check out my new website"
   };
 };
 
+
+
 // https://remix.run/guides/routing#index-routes
 export default function Index() {
-  let data = useLoaderData<IndexData>();
+  const data = useLoaderData<IndexData>();
+  console.log("LOG -> Index -> data", data)
 
   return (
-    <div className="remix__page">
-      <main>
-        <h2>Welcome to Remix!</h2>
-        <p>We're stoked that you're here. 🥳</p>
-        <p>
-          Feel free to take a look around the code to see how Remix does things,
-          it might be a bit different than what you’re used to. When you're
-          ready to dive deeper, we've got plenty of resources to get you
-          up-and-running quickly.
-        </p>
-        <p>
-          Check out all the demos in this starter, and then just delete the{" "}
-          <code>app/routes/demos</code> and <code>app/styles/demos</code>{" "}
-          folders when you're ready to turn this into your next project.
-        </p>
-      </main>
-      <aside>
-        <h2>Demos In This App</h2>
-        <ul>
-          {data.demos.map(demo => (
-            <li key={demo.to} className="remix__page__resource">
-              <Link to={demo.to} prefetch="intent">
-                {demo.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <h2>Resources</h2>
-        <ul>
-          {data.resources.map(resource => (
-            <li key={resource.url} className="remix__page__resource">
-              <a href={resource.url}>{resource.name}</a>
-            </li>
-          ))}
-        </ul>
-      </aside>
+    <div>
+      <div className="first-section">
+        <div className="first-text">
+          <h1 className="title">Hello, <br />I'm Marina</h1>
+          <h2 className="subtitle">frontend software engineer</h2>
+          <div className="location">
+            <img className="pin-icon" src={Pin} aria-hidden="true" />
+            <p className="location-text">Florianópolis, Brasil</p>
+          </div>
+        </div>
+        <img className="photo" src={First} aria-hidden="true" />
+        <img className="photo-mobile" src={FirstMobile} aria-hidden="true" />
+      </div>
+      <div className="second-section">
+        <img src={Second} className="second-photo" aria-hidden="true" />
+        <div>
+<div className="second-header">
+        <img src={SecondMobile} className="second-photo-mobile" aria-hidden="true" />
+            <h2 className="about-me">about me</h2>
+</div>
+          <p className="about-me-text">I'm 25 years old with a bachelor's degree in Control and Automation Engineer from UFSC. In the last 3 years, I've been working as a Frontend Software Engineer and I can say that web development is my passion. Professional posture, team player, always seeking to learn more
+          </p>
+        </div>
+      </div>
+      <div className="third-section">
+        <h2 className="skills">
+          professional skills
+        </h2>
+        <div className="skills-container">
+          {data.skills.map(skill => <div key={skill.name} className="skill">
+            <img src={skill.png} alt="HTML icon" className="skill-icon" />
+            <p className="skill-label">{skill.name}</p>
+          </div>)}
+        </div>
+      </div>
     </div>
   );
 }
