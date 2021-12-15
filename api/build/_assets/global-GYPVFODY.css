@@ -1,0 +1,288 @@
+/*
+ * You can just delete everything here or keep whatever you like, it's just a
+ * quick baseline!
+ */
+:root {
+  --color-pink: #BB5353;
+  --color-beige: #F3EDDD;
+  font-family: 'Righteous';
+  font-size: 62.5%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:focus {
+  outline: var(--color-links) solid 2px;
+  outline-offset: 2px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-beige);
+  color: var(--color-pink);
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-links);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-links-hover);
+  text-decoration: underline;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input:where([type="text"]),
+input:where([type="search"]) {
+  display: block;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font: inherit;
+  line-height: 1;
+  height: calc(1ch + 1.5em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: hsl(0 0% 100% / 20%);
+  color: var(--color-foreground);
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 1.6rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.header-link {
+  text-decoration: none;
+  color: var(--color-pink);
+  font-weight: normal;
+}
+
+.header-link:hover {
+  color: var(--color-pink);
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1.6rem;
+  background-color: var(--color-pink);
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.first-section {
+  padding: 2.4rem 5.6rem;
+  display: flex;
+}
+
+.title {
+  color: var(--color-beige);
+  font-size: 4.8rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-pink);
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+.third-section {
+  padding: 3.6rem;
+}
+
+.skills {
+  font-size: 4.8rem;
+  text-transform: uppercase;
+}
+
+.location {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.pin-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.location-text {
+  font-size: 1.6rem;
+}
+
+.first-text {
+  margin-top: 6.4rem;
+}
+
+.photo {
+  height: 60%;
+  margin-left: 2.4rem;
+}
+
+.second-section {
+  background-color: var(--color-pink);
+  padding: 3.6rem 2.4rem;
+  display: flex;
+  gap: 3.2rem;
+}
+
+.about-me {
+  color: var(--color-pink);
+  font-size: 4.8rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-beige);
+  text-transform: uppercase;
+  margin-top: 3.6rem;
+}
+
+.about-me-text {
+  color: var(--color-beige);
+  font-size: 1.6rem;
+  margin-top: 0.8rem;
+}
+
+.skills-container {
+  margin-top: 4.8rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  row-gap: 3.2rem;
+  column-gap: 4.8rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.skill-icon {
+  height: 8.4rem;
+}
+
+.skill-label {
+  color: var(--color-beige);
+  font-size: 2.4rem;
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-pink);
+}
+
+
+@media print, screen and (max-width: 800px) {
+  .photo {
+    display: none;
+  }
+
+  .second-photo {
+    display: none;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .skills {
+    font-size: 2.4rem;
+  }
+
+  .skill-icon {
+    height: 3.6rem;
+  }
+
+  .skill-label {
+    font-size: 1.6rem;
+    -webkit-text-stroke-color: transparent;
+    color: var(--color-pink);
+  }
+
+  .second-photo-mobile {
+    height: 6.4rem;
+  }
+
+  .about-me {
+    font-size: 3.6rem;
+  }
+
+  .second-header {
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+  }
+
+  .first-section {
+    padding-bottom: 0;
+    flex-direction: column;
+  }
+
+  .photo-mobile {
+    height: 8.4rem;
+    width: 8.4rem;
+    margin-top: auto;
+    align-self: flex-end;
+  }
+
+  .first-text {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .photo-mobile {
+    display: none;
+  }
+
+  .second-photo-mobile {
+    display: none;
+  }
+}

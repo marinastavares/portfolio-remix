@@ -15,6 +15,7 @@ import globalStylesUrl from "~/styles/global.css";
 import Logo from "~/assets/logo";
 import Twitter from "~/assets/twitter";
 import Github from "~/assets/github";
+import Linkedin from "~/assets/linkedin";
 
 // https://remix.run/api/app#links
 export const links: LinksFunction = () => {
@@ -141,11 +142,14 @@ function Layout({ children }: { children: React.ReactNode }) {
       </header>
         <main>{children}</main>
       <footer className="footer">
-        <a target="_blank" href="https://www.github.com/marinastavares" aria-label="Github link" rel="noreferrer">
+        <a aria-label="Link to github account" target="_blank" href="https://www.github.com/marinastavares" aria-label="Github link" rel="noreferrer">
             <Github />
         </a>
-        <a target="_blank" href="https://www.twitter.com/marinastavares" aria-label="Twitter link" rel="noreferrer">
+        <a aria-label="Link to twitter account" target="_blank" href="https://www.twitter.com/marinastavares" aria-label="Twitter link" rel="noreferrer">
             <Twitter />
+        </a>
+        <a aria-label="Link to linkedin account" target="_blank" href="https://www.linkedin.com/in/marinastavares" aria-label="Twitter link" rel="noreferrer">
+            <Linkedin />
         </a>
       </footer>
     </div>

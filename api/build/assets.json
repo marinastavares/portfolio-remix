@@ -1,0 +1,31 @@
+{
+  "version": "5c363a57",
+  "entry": {
+    "module": "/build/entry.client-3DYDG5QU.js",
+    "imports": [
+      "/build/_shared/chunk-Z35JMVEY.js"
+    ]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-JKCVKL52.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": true,
+      "hasErrorBoundary": true
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-4H5U5MGS.js",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-5C363A57.js"
+}
