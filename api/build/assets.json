@@ -1,5 +1,5 @@
 {
-  "version": "5c363a57",
+  "version": "a3950d16",
   "entry": {
     "module": "/build/entry.client-3DYDG5QU.js",
     "imports": [
@@ -10,7 +10,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-JKCVKL52.js",
+      "module": "/build/root-W7FV43CZ.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": true,
@@ -25,7 +25,18 @@
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
+    },
+    "routes/xp/index": {
+      "id": "routes/xp/index",
+      "parentId": "root",
+      "path": "xp",
+      "index": true,
+      "module": "/build/routes/xp/index-H6W72DSC.js",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-5C363A57.js"
+  "url": "/build/manifest-A3950D16.js"
 }

@@ -126,19 +126,19 @@ function Layout({ children }: { children: React.ReactNode }) {
           <Link to="/" title="Marina's logo" className="header-logo">
             <Logo />
           </Link>
-          {/* <nav aria-label="Main navigation" className="header-nav">
+          <nav aria-label="Main navigation" className="header-nav">
             <ul>
               <li>
                 <Link className="header-link" to="/">Home</Link>
               </li>
               <li>
-              <Link className="header-link" to="/curriculum">Curriculum</Link>
+              <Link className="header-link" to="/xp">XP</Link>
               </li>
-              <li>
+              {/* <li>
               <Link className="header-link" to="/">Contact me</Link>
-              </li>
+              </li> */}
             </ul>
-          </nav> */}
+          </nav>
       </header>
         <main>{children}</main>
       <footer className="footer">

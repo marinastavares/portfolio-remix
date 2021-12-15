@@ -1,0 +1,80 @@
+.education {
+  display: flex;
+  flex-direction: row;
+  padding: 1.6rem 2.4rem 0 2.4rem;
+}
+
+.title {
+  margin: 8rem 0 4rem;
+  font-size: 4.8rem;
+  color: var(--color-beige);
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-pink);
+}
+
+.years {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-right: 0.1rem solid var(--color-pink);
+  padding-right: 0.8rem;
+}
+
+.year {
+  font-size: 2.4rem;
+}
+
+.container-education {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 1.6rem;
+}
+
+.content-education {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.8rem;
+}
+
+.education-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.education-title {
+  font-size: 1.8rem;
+}
+
+.experience {
+  background-color: var(--color-pink);
+  padding: 3.6rem 2.4rem 1.2rem;
+}
+
+.experience-title {
+  display: inline;
+  background-color: var(--color-beige);
+  font-size: 4.8rem;
+  text-transform: uppercase;
+}
+
+@media print, screen and (max-width: 800px) {
+
+  .education {
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+}

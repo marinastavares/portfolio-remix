@@ -62,7 +62,7 @@ __export(root_exports, {
 var import_remix2 = __toModule(require("remix"));
 
 // app/styles/global.css
-var global_default = "/build/_assets/global-GYPVFODY.css";
+var global_default = "/build/_assets/global-MHO3Q4UK.css";
 
 // app/assets/logo.tsx
 var Logo = () => /* @__PURE__ */ React.createElement("svg", {
@@ -191,7 +191,16 @@ function Layout({ children }) {
     to: "/",
     title: "Marina's logo",
     className: "header-logo"
-  }, /* @__PURE__ */ React.createElement(logo_default, null))), /* @__PURE__ */ React.createElement("main", null, children), /* @__PURE__ */ React.createElement("footer", {
+  }, /* @__PURE__ */ React.createElement(logo_default, null)), /* @__PURE__ */ React.createElement("nav", {
+    "aria-label": "Main navigation",
+    className: "header-nav"
+  }, /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(import_remix2.Link, {
+    className: "header-link",
+    to: "/"
+  }, "Home")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(import_remix2.Link, {
+    className: "header-link",
+    to: "/xp"
+  }, "XP"))))), /* @__PURE__ */ React.createElement("main", null, children), /* @__PURE__ */ React.createElement("footer", {
     className: "footer"
   }, /* @__PURE__ */ React.createElement("a", {
     "aria-label": "Link to github account",
@@ -214,20 +223,128 @@ function Layout({ children }) {
   }, /* @__PURE__ */ React.createElement(linkedin_default, null))));
 }
 
-// route-module:/Users/marinatavares/portifolia-remix/app/routes/index.tsx
-var routes_exports = {};
-__export(routes_exports, {
+// route-module:/Users/marinatavares/portifolia-remix/app/routes/xp/index.tsx
+var xp_exports = {};
+__export(xp_exports, {
   default: () => Index,
+  links: () => links2,
   loader: () => loader,
   meta: () => meta
 });
 var import_remix3 = __toModule(require("remix"));
 
+// app/assets/xp/first.png
+var first_default = "/build/_assets/first-U35SLYKH.png";
+
+// app/styles/xp/styles.css
+var styles_default = "/build/_assets/styles-DXRSN5H7.css";
+
+// route-module:/Users/marinatavares/portifolia-remix/app/routes/xp/index.tsx
+function links2() {
+  return [{ rel: "stylesheet", href: styles_default }];
+}
+var loader = () => {
+  const data = {
+    education: [{ degree: "Bachelor in Control and Automation Engineer", institution: "Universidade Federal de Santa Catarina", location: "Florian\xF3polis, Brasil", startBy: 2014, finishBy: 2021 }, { degree: "High School", institution: "Col\xE9gio Catarinense", location: "Florian\xF3polis, Brasil", startBy: 2012, finishBy: 2014 }],
+    experience: [{
+      time: "SEP 2021 - CURRENT",
+      title: "Mid-level Frontend Software Engineer",
+      company: "Bliss Applications",
+      consultant: "Consultant @ OnRising",
+      techs: ["ReactJS", "GraphQL", "Apollo", "NextJS", "NestJS", "Typescript", "Design System", "Jenkins", "Agile"]
+    }, {
+      time: "JAN 2021 - SEP 2021",
+      title: "Mid-level Frontend Software Engineer",
+      company: "Jungle Devs",
+      techs: ["ReactJS", "Redux", "cra", "Javascript", "SEO", "SSR", "Material UI", "aws", "webpack", "agile"]
+    }, {
+      time: "JAN 2019 - JAN 2021",
+      title: "Frontend Software Engineer Intern",
+      company: "Jungle Devs",
+      techs: ["ReactJS", "Redux", "cra", "Javascript", "Material UI", "webpack", "agile"]
+    }],
+    languages: [],
+    softSkills: []
+  };
+  return (0, import_remix3.json)(data);
+};
+var meta = () => {
+  return {
+    title: "Marina's Profile",
+    description: "Check out my new website"
+  };
+};
+function Index() {
+  const data = (0, import_remix3.useLoaderData)();
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("section", {
+    className: "education"
+  }, /* @__PURE__ */ React.createElement("img", {
+    className: "photo-education",
+    src: first_default,
+    "aria-hidden": "true"
+  }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h1", {
+    className: "title"
+  }, "Education"), data.education.map((item) => /* @__PURE__ */ React.createElement("div", {
+    key: item.degree,
+    className: "container-education"
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: "years"
+  }, /* @__PURE__ */ React.createElement("p", {
+    className: "year"
+  }, item.startBy), /* @__PURE__ */ React.createElement("p", {
+    className: "year"
+  }, item.finishBy)), /* @__PURE__ */ React.createElement("div", {
+    className: "content-education"
+  }, /* @__PURE__ */ React.createElement("h2", {
+    className: "education-title"
+  }, item.degree), /* @__PURE__ */ React.createElement("p", {
+    className: "education-text"
+  }, item.institution, " ", /* @__PURE__ */ React.createElement("br", null), " ", item.location)))))), /* @__PURE__ */ React.createElement("section", {
+    className: "experience"
+  }, /* @__PURE__ */ React.createElement("h1", {
+    className: "experience-title"
+  }, "experience"), /* @__PURE__ */ React.createElement("div", {
+    className: "dots"
+  }, data.experience.map((item, index) => {
+    if (index % 2 === 0) {
+      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", {
+        className: "time"
+      }, item.time), /* @__PURE__ */ React.createElement("div", {
+        className: "circle"
+      }), /* @__PURE__ */ React.createElement("div", {
+        className: "experience-content"
+      }, /* @__PURE__ */ React.createElement("h2", {
+        className: "experience-subtitle"
+      }, item.title), /* @__PURE__ */ React.createElement("div", {
+        className: "experience-location"
+      }, /* @__PURE__ */ React.createElement("p", {
+        className: "experience-company"
+      }, item.company), item.consultant && /* @__PURE__ */ React.createElement("p", {
+        className: "experience-company"
+      }, item.consultant)), /* @__PURE__ */ React.createElement("div", {
+        className: "experience-tech"
+      }, item.techs.map((tech) => /* @__PURE__ */ React.createElement("p", {
+        key: item.time + tech,
+        className: "tech"
+      }, tech)))));
+    }
+  }))));
+}
+
+// route-module:/Users/marinatavares/portifolia-remix/app/routes/index.tsx
+var routes_exports = {};
+__export(routes_exports, {
+  default: () => Index2,
+  loader: () => loader2,
+  meta: () => meta2
+});
+var import_remix4 = __toModule(require("remix"));
+
 // app/assets/pin.png
 var pin_default = "/build/_assets/pin-7HHC4BRV.png";
 
 // app/assets/first.png
-var first_default = "/build/_assets/first-DOBYRWBC.png";
+var first_default2 = "/build/_assets/first-DOBYRWBC.png";
 
 // app/assets/first-mobile.png
 var first_mobile_default = "/build/_assets/first-mobile-WJSD2EQ7.png";
@@ -293,23 +410,23 @@ var SKILL_ICONS = {
   [SKILLS.GRAPHQL]: graphql_default,
   [SKILLS.APOLLO]: apollo_default
 };
-var loader = () => {
+var loader2 = () => {
   const data = {
     currentPosition: "frontend software engineer",
     location: "Florian\xF3polis, Brasil",
     aboutMe: "I'm 25 years old with a bachelor's degree in Control and Automation Engineer from UFSC. In the last 3 years, I've been working as a Frontend Software Engineer and I can say that web development is my passion. Professional posture, team player, always seeking to learn more.",
     skills: Object.values(SKILLS)
   };
-  return (0, import_remix3.json)(data);
+  return (0, import_remix4.json)(data);
 };
-var meta = () => {
+var meta2 = () => {
   return {
     title: "Marina's Profile",
     description: "Check out my new website"
   };
 };
-function Index() {
-  const data = (0, import_remix3.useLoaderData)();
+function Index2() {
+  const data = (0, import_remix4.useLoaderData)();
   return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {
     className: "first-section"
   }, /* @__PURE__ */ React.createElement("div", {
@@ -328,7 +445,7 @@ function Index() {
     className: "location-text"
   }, data.location))), /* @__PURE__ */ React.createElement("img", {
     className: "photo",
-    src: first_default,
+    src: first_default2,
     "aria-hidden": "true"
   }), /* @__PURE__ */ React.createElement("img", {
     className: "photo-mobile",
@@ -380,6 +497,14 @@ var routes = {
     index: void 0,
     caseSensitive: void 0,
     module: root_exports
+  },
+  "routes/xp/index": {
+    id: "routes/xp/index",
+    parentId: "root",
+    path: "xp",
+    index: true,
+    caseSensitive: void 0,
+    module: xp_exports
   },
   "routes/index": {
     id: "routes/index",
