@@ -1,5 +1,5 @@
 {
-  "version": "a3950d16",
+  "version": "3cd2e2a6",
   "entry": {
     "module": "/build/entry.client-3DYDG5QU.js",
     "imports": [
@@ -31,12 +31,12 @@
       "parentId": "root",
       "path": "xp",
       "index": true,
-      "module": "/build/routes/xp/index-H6W72DSC.js",
+      "module": "/build/routes/xp/index-C5ZJTXDE.js",
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-A3950D16.js"
+  "url": "/build/manifest-3CD2E2A6.js"
 }

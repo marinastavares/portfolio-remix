@@ -76,7 +76,7 @@
 .extra {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 12rem 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas: 'title title photo' 'language soft photo';
   padding: 0 2.4rem 0 2.4rem;
 }
@@ -139,8 +139,7 @@
   display: inline-block;
   background-color: var(--color-pink);
   color: var(--color-beige);
-  font-size: 1.4rem;
-  padding: 0.2rem;
+  font-size: 1.6rem;
 }
 
 
@@ -152,20 +151,6 @@
 
   .title {
     margin: 0;
-  }
-
-  .extra {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'title photo' 'language soft';
-    padding: 0 2.4rem 0 2.4rem;
-    column-gap: 1.6rem;
-    padding-bottom: 3.6rem;
-  }
-
-  .batman {
-    width: 8rem;
   }
 
 }

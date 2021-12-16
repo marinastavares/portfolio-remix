@@ -2,8 +2,22 @@ var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __export = (target, all) => {
   __markAsModule(target);
@@ -227,7 +241,7 @@ function Layout({ children }) {
 var xp_exports = {};
 __export(xp_exports, {
   default: () => Index,
-  links: () => links2,
+  links: () => links3,
   loader: () => loader,
   meta: () => meta
 });
@@ -236,35 +250,161 @@ var import_remix3 = __toModule(require("remix"));
 // app/assets/xp/first.png
 var first_default = "/build/_assets/first-U35SLYKH.png";
 
+// app/assets/xp/second.png
+var second_default = "/build/_assets/second-PZSNWZLD.png";
+
 // app/styles/xp/styles.css
-var styles_default = "/build/_assets/styles-DXRSN5H7.css";
+var styles_default = "/build/_assets/styles-APSA6ZY4.css";
+
+// app/assets/brain.png
+var brain_default = "/build/_assets/brain-X3VAM7GP.png";
+
+// app/assets/job.png
+var job_default = "/build/_assets/job-XMFPYNYL.png";
+
+// app/assets/consultant.png
+var consultant_default = "/build/_assets/consultant-XFBD2VQU.png";
+
+// app/components/experience/styles.css
+var styles_default2 = "/build/_assets/styles-UU6RDOSC.css";
+
+// app/components/experience/index.tsx
+var import_clsx = __toModule(require("clsx"));
+var links2 = () => [{ rel: "stylesheet", href: styles_default2 }];
+var Experience = ({
+  title,
+  company,
+  consultant,
+  techs,
+  time,
+  isFirst,
+  isOdd,
+  isLast
+}) => {
+  return /* @__PURE__ */ React.createElement("div", {
+    className: "one-experience"
+  }, /* @__PURE__ */ React.createElement("p", {
+    className: (0, import_clsx.default)("time", { ["column3"]: isOdd })
+  }, time), /* @__PURE__ */ React.createElement("div", {
+    className: "middle-circle"
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: (0, import_clsx.default)({ ["circle"]: !isFirst, ["circle-border"]: isFirst })
+  }), !isLast && /* @__PURE__ */ React.createElement("div", {
+    className: "line"
+  })), " ", /* @__PURE__ */ React.createElement("div", {
+    className: (0, import_clsx.default)("experience-content", { ["column1"]: isOdd })
+  }, /* @__PURE__ */ React.createElement("h2", {
+    className: "experience-subtitle"
+  }, title), /* @__PURE__ */ React.createElement("div", {
+    className: "experience-location"
+  }, /* @__PURE__ */ React.createElement("img", {
+    src: job_default,
+    "aria-hidden": "true"
+  }), /* @__PURE__ */ React.createElement("p", {
+    className: "experience-company"
+  }, company), consultant && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("img", {
+    src: consultant_default,
+    "aria-hidden": "true"
+  }), /* @__PURE__ */ React.createElement("p", {
+    className: "experience-company"
+  }, consultant))), /* @__PURE__ */ React.createElement("div", {
+    className: "experience-location"
+  }, /* @__PURE__ */ React.createElement("img", {
+    className: "brain",
+    src: brain_default,
+    "aria-hidden": "true"
+  }), /* @__PURE__ */ React.createElement("div", {
+    className: "experience-tech"
+  }, techs.map((tech) => /* @__PURE__ */ React.createElement("p", {
+    key: time + tech,
+    className: "tech"
+  }, tech))))));
+};
+var experience_default = Experience;
 
 // route-module:/Users/marinatavares/portifolia-remix/app/routes/xp/index.tsx
-function links2() {
-  return [{ rel: "stylesheet", href: styles_default }];
+function links3() {
+  return [...links2(), { rel: "stylesheet", href: styles_default }];
 }
 var loader = () => {
   const data = {
-    education: [{ degree: "Bachelor in Control and Automation Engineer", institution: "Universidade Federal de Santa Catarina", location: "Florian\xF3polis, Brasil", startBy: 2014, finishBy: 2021 }, { degree: "High School", institution: "Col\xE9gio Catarinense", location: "Florian\xF3polis, Brasil", startBy: 2012, finishBy: 2014 }],
-    experience: [{
-      time: "SEP 2021 - CURRENT",
-      title: "Mid-level Frontend Software Engineer",
-      company: "Bliss Applications",
-      consultant: "Consultant @ OnRising",
-      techs: ["ReactJS", "GraphQL", "Apollo", "NextJS", "NestJS", "Typescript", "Design System", "Jenkins", "Agile"]
+    education: [
+      {
+        degree: "Bachelor in Control and Automation Engineer",
+        institution: "Universidade Federal de Santa Catarina",
+        location: "Florian\xF3polis, Brasil",
+        startBy: 2014,
+        finishBy: 2021
+      },
+      {
+        degree: "High School",
+        institution: "Col\xE9gio Catarinense",
+        location: "Florian\xF3polis, Brasil",
+        startBy: 2012,
+        finishBy: 2014
+      }
+    ],
+    experience: [
+      {
+        time: "SEP 2021 - CURRENT",
+        title: "Mid-level Frontend Software Engineer",
+        company: "Bliss Applications",
+        consultant: "Consultant @ OnRising",
+        techs: [
+          "ReactJS",
+          "GraphQL",
+          "Apollo",
+          "NextJS",
+          "NestJS",
+          "Typescript",
+          "Design System",
+          "Jenkins",
+          "Agile"
+        ]
+      },
+      {
+        time: "JAN 2021 - SEP 2021",
+        title: "Mid-level Frontend Software Engineer",
+        company: "Jungle Devs",
+        techs: [
+          "ReactJS",
+          "Redux",
+          "cra",
+          "Javascript",
+          "SEO",
+          "SSR",
+          "Material UI",
+          "aws",
+          "webpack",
+          "agile"
+        ]
+      },
+      {
+        time: "JAN 2019 - JAN 2021",
+        title: "Frontend Software Engineer Intern",
+        company: "Jungle Devs",
+        techs: [
+          "ReactJS",
+          "Redux",
+          "cra",
+          "Javascript",
+          "Material UI",
+          "webpack",
+          "agile"
+        ]
+      }
+    ],
+    languages: [{
+      name: "Portuguese",
+      grade: 5
     }, {
-      time: "JAN 2021 - SEP 2021",
-      title: "Mid-level Frontend Software Engineer",
-      company: "Jungle Devs",
-      techs: ["ReactJS", "Redux", "cra", "Javascript", "SEO", "SSR", "Material UI", "aws", "webpack", "agile"]
+      name: "English",
+      grade: 4
     }, {
-      time: "JAN 2019 - JAN 2021",
-      title: "Frontend Software Engineer Intern",
-      company: "Jungle Devs",
-      techs: ["ReactJS", "Redux", "cra", "Javascript", "Material UI", "webpack", "agile"]
+      name: "German",
+      grade: 2
     }],
-    languages: [],
-    softSkills: []
+    softSkills: ["Leadership", "Communication", "Problem-solving", "Teamwork"]
   };
   return (0, import_remix3.json)(data);
 };
@@ -303,32 +443,41 @@ function Index() {
     className: "experience"
   }, /* @__PURE__ */ React.createElement("h1", {
     className: "experience-title"
-  }, "experience"), /* @__PURE__ */ React.createElement("div", {
-    className: "dots"
-  }, data.experience.map((item, index) => {
-    if (index % 2 === 0) {
-      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", {
-        className: "time"
-      }, item.time), /* @__PURE__ */ React.createElement("div", {
-        className: "circle"
-      }), /* @__PURE__ */ React.createElement("div", {
-        className: "experience-content"
-      }, /* @__PURE__ */ React.createElement("h2", {
-        className: "experience-subtitle"
-      }, item.title), /* @__PURE__ */ React.createElement("div", {
-        className: "experience-location"
-      }, /* @__PURE__ */ React.createElement("p", {
-        className: "experience-company"
-      }, item.company), item.consultant && /* @__PURE__ */ React.createElement("p", {
-        className: "experience-company"
-      }, item.consultant)), /* @__PURE__ */ React.createElement("div", {
-        className: "experience-tech"
-      }, item.techs.map((tech) => /* @__PURE__ */ React.createElement("p", {
-        key: item.time + tech,
-        className: "tech"
-      }, tech)))));
-    }
-  }))));
+  }, "experience"), data.experience.map((exp, index) => /* @__PURE__ */ React.createElement(experience_default, __spreadValues({
+    isFirst: !index,
+    key: exp.time,
+    isOdd: index % 2 !== 0,
+    isLast: index + 1 === data.experience.length
+  }, exp)))), /* @__PURE__ */ React.createElement("section", {
+    className: "extra"
+  }, /* @__PURE__ */ React.createElement("h1", {
+    className: "extra-title"
+  }, "Extra"), /* @__PURE__ */ React.createElement("img", {
+    src: second_default,
+    "aria-hidden": "true",
+    className: "batman"
+  }), /* @__PURE__ */ React.createElement("div", {
+    className: "language"
+  }, /* @__PURE__ */ React.createElement("h2", {
+    className: "extra-subtitle"
+  }, " Language"), data.languages.map((type) => /* @__PURE__ */ React.createElement("div", {
+    key: type.name,
+    className: "language-type"
+  }, /* @__PURE__ */ React.createElement("p", {
+    className: "language-name"
+  }, type.name), Array.from({ length: type.grade }).map((value, index) => /* @__PURE__ */ React.createElement("div", {
+    className: "grade",
+    key: type.name + index
+  }))))), /* @__PURE__ */ React.createElement("div", {
+    className: "soft-skills"
+  }, /* @__PURE__ */ React.createElement("h2", {
+    className: "extra-subtitle"
+  }, " Soft skills"), /* @__PURE__ */ React.createElement("div", {
+    className: "soft-skills-content"
+  }, data.softSkills.map((tech) => /* @__PURE__ */ React.createElement("p", {
+    key: tech,
+    className: "soft-skill"
+  }, tech))))));
 }
 
 // route-module:/Users/marinatavares/portifolia-remix/app/routes/index.tsx
@@ -350,7 +499,7 @@ var first_default2 = "/build/_assets/first-DOBYRWBC.png";
 var first_mobile_default = "/build/_assets/first-mobile-WJSD2EQ7.png";
 
 // app/assets/second.png
-var second_default = "/build/_assets/second-DW6G6XAC.png";
+var second_default2 = "/build/_assets/second-DW6G6XAC.png";
 
 // app/assets/second-mobile.png
 var second_mobile_default = "/build/_assets/second-mobile-MWDPMQMI.png";
@@ -454,7 +603,7 @@ function Index2() {
   })), /* @__PURE__ */ React.createElement("div", {
     className: "second-section"
   }, /* @__PURE__ */ React.createElement("img", {
-    src: second_default,
+    src: second_default2,
     className: "second-photo",
     "aria-hidden": "true"
   }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", {

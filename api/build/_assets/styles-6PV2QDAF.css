@@ -1,0 +1,110 @@
+
+.time {
+  grid-column: 1;
+  color: var(--color-beige);
+  font-size: 1.8rem;
+  text-align: end;
+  margin-top: 0.8rem;
+}
+
+.middle-circle {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  height: 4.4rem;
+  width: 3.4rem;
+  background-color: var(--color-beige);
+  border-radius: 50%;
+}
+
+.circle-border {
+  height: 4.4rem;
+  width: 3.4rem;
+  background-color: var(--color-pink);
+  border: 2rem solid var(--color-beige);
+  border-radius: 50%;
+}
+
+.line {
+  height: 100%;
+  width: 1rem;
+  background-color: var(--color-beige);
+}
+
+.experience-subtitle {
+  font-size: 2.4rem;
+  color: var(--color-pink);
+  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-color: var(--color-beige);
+}
+
+.experience-location {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.experience-company {
+  color: var(--color-beige);
+  font-size: 1.6rem;
+}
+
+.experience-tech {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-self: start;
+  margin-bottom: 3.6rem;
+
+}
+
+.tech {
+  display: inline;
+  background-color: var(--color-beige);
+  font-size: 1.6rem;
+  padding: 0.2rem;
+  text-transform: uppercase;
+}
+
+.brain {
+  height: 3.2rem;
+  width: 3.2rem;
+  align-self: baseline;
+}
+
+.column1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.column3 {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: start;
+}
+
+.one-experience {
+  display: grid;
+  grid-template-columns: 1fr 3.2rem 1fr;
+  grid-template-rows: 1fr;;
+  column-gap: 1.6rem;
+}
+
+@media print, screen and (max-width: 800px) {
+
+}
+
+@media screen and (min-width: 800px) {
+}

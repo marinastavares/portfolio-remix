@@ -157,15 +157,9 @@
   .extra {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 'title photo' 'language soft';
     padding: 0 2.4rem 0 2.4rem;
-    column-gap: 1.6rem;
-    padding-bottom: 3.6rem;
-  }
-
-  .batman {
-    width: 8rem;
   }
 
 }

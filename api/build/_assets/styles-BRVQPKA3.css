@@ -161,7 +161,6 @@
     grid-template-areas: 'title photo' 'language soft';
     padding: 0 2.4rem 0 2.4rem;
     column-gap: 1.6rem;
-    padding-bottom: 3.6rem;
   }
 
   .batman {
