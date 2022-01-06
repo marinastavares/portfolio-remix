@@ -1,0 +1,63 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0 1.6rem;
+}
+
+.container-project {
+  border: 0.1rem solid var(--color-pink);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: auto min-content;
+  grid-template-areas: 'title topics' 'description description' 'dates dates';
+  justify-content: start;
+  column-gap: 1.2rem;
+  row-gap: 0.8rem;
+}
+
+.container-project:hover {
+  background-color: var(--color-pink);
+  color: var(--color-beige);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-title {
+  grid-area: title;
+  font-size: 2.4rem;
+}
+
+.topics {
+  grid-area: topics;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.topic {
+  background-color: var(--color-pink);
+  color: var(--color-beige);
+  text-transform: uppercase;
+  padding: 0.2rem;
+}
+
+.description {
+  font-size: 1.6rem;
+  grid-area: description;
+}
+
+.dates {
+  grid-area: dates;
+  display: flex;
+}
+
+
+@media print, screen and (max-width: 800px) {
+}
+
+
+@media screen and (min-width: 800px) {
+}

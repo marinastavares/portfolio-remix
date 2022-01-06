@@ -18,6 +18,7 @@ module.exports = {
     },
     "plugins": [
         "react",
+        "remix",
         "@typescript-eslint"
     ],
     "rules": {

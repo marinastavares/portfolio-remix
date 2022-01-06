@@ -1,0 +1,31 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0 1.6rem;
+}
+
+.container-project {
+  border: 0.1rem solid var(--color-pink);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.container-project:hover {
+  background-color: var(--color-pink);
+  color: var(--color-beige);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-title {
+  font-size: 1.6rem;
+}
+
+
+@media print, screen and (max-width: 800px) {
+}
+
+
+@media screen and (min-width: 800px) {
+}

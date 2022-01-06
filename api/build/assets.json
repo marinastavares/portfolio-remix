@@ -1,16 +1,16 @@
 {
-  "version": "3cd2e2a6",
+  "version": "2e8f0371",
   "entry": {
-    "module": "/build/entry.client-3DYDG5QU.js",
+    "module": "/build/entry.client-M5R2V56H.js",
     "imports": [
-      "/build/_shared/chunk-Z35JMVEY.js"
+      "/build/_shared/chunk-672QXAE4.js"
     ]
   },
   "routes": {
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-W7FV43CZ.js",
+      "module": "/build/root-ZIPLNT6Z.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": true,
@@ -20,7 +20,21 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-4H5U5MGS.js",
+      "module": "/build/routes/index-OQF4W7VN.js",
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/projects/index": {
+      "id": "routes/projects/index",
+      "parentId": "root",
+      "path": "projects",
+      "index": true,
+      "module": "/build/routes/projects/index-K6VON2OH.js",
+      "imports": [
+        "/build/_shared/chunk-WGSBMNWU.js"
+      ],
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
@@ -31,12 +45,15 @@
       "parentId": "root",
       "path": "xp",
       "index": true,
-      "module": "/build/routes/xp/index-C5ZJTXDE.js",
+      "module": "/build/routes/xp/index-QXOIOKNZ.js",
+      "imports": [
+        "/build/_shared/chunk-WGSBMNWU.js"
+      ],
       "hasAction": false,
       "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-3CD2E2A6.js"
+  "url": "/build/manifest-2E8F0371.js"
 }

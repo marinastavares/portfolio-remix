@@ -134,13 +134,13 @@ function Layout({ children }: { children: React.ReactNode }) {
               <li>
               <Link className="header-link" to="/xp">XP</Link>
               </li>
-              {/* <li>
-              <Link className="header-link" to="/">Contact me</Link>
-              </li> */}
+              <li>
+              <Link className="header-link" to="/projects">Projects</Link>
+              </li>
             </ul>
           </nav>
       </header>
-        <main>{children}</main>
+        <main className="main">{children}</main>
       <footer className="footer">
         <a aria-label="Link to github account" target="_blank" href="https://www.github.com/marinastavares" aria-label="Github link" rel="noreferrer">
             <Github />
