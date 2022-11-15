@@ -7,7 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch
+  useCatch,
 } from "remix";
 import type { LinksFunction } from "remix";
 
@@ -21,7 +21,10 @@ import Linkedin from "~/assets/linkedin";
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
-    { rel: "stylesheet", href: 'https://fonts.googleapis.com/css?family=Righteous' },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css?family=Righteous",
+    },
   ];
 };
 
@@ -95,7 +98,7 @@ export function CatchBoundary() {
 
 function Document({
   children,
-  title
+  title,
 }: {
   children: React.ReactNode;
   title?: string;
@@ -122,7 +125,7 @@ function Document({
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="remix-app">
-      <header className="header">
+      {/* <header className="header">
           <Link to="/" title="Marina's logo" className="header-logo">
             <Logo />
           </Link>
@@ -139,9 +142,20 @@ function Layout({ children }: { children: React.ReactNode }) {
               </li>
             </ul>
           </nav>
-      </header>
-        <main className="main">{children}</main>
-      <footer className="footer">
+      </header> */}
+      <main className="background">
+        <div className="green" />
+        <div className="blue" />
+        <div className="rose" />
+        <div className="black" />
+        <div className="purple" />
+        <div className="red" />
+        <div className="black" />
+        <div className="mustard" />
+        <div className="rose" />
+        {children}
+      </main>
+      {/* <footer className="footer">
         <a aria-label="Link to github account" target="_blank" href="https://www.github.com/marinastavares" aria-label="Github link" rel="noreferrer">
             <Github />
         </a>
@@ -151,7 +165,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         <a aria-label="Link to linkedin account" target="_blank" href="https://www.linkedin.com/in/marinastavares" aria-label="Twitter link" rel="noreferrer">
             <Linkedin />
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
